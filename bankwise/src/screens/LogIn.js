@@ -4,7 +4,7 @@ import { StyleSheet, Text, View, Image,TextInput, TouchableOpacity } from 'react
 import { useFonts } from 'expo-font';
 import AppLoading from 'expo-app-loading';
 
-export default createAccount = ({ navigation }) => {
+export default logIn = ({ navigation }) => {
    const [fontsLoaded] = useFonts({
     'Avigea': require('../../assets/fonts/Avigea.ttf'),
     'Poppins-Bold': require('../../assets/fonts/Poppins-Bold.ttf'),
@@ -19,10 +19,6 @@ export default createAccount = ({ navigation }) => {
   return (
     <View style={styles.container}>
     <Text style={styles.maintext}>bankwise</Text>
-    <Text style={styles.title}>Full Name</Text>
-      <View style={styles.box}>
-        <TextInput placeholder="Enter your first and last name" placeholderTextColor="#AFAFAF" style={styles.textInput}/>
-      </View>
     <Text style={styles.title}>Email</Text>
       <View style={styles.box}>
         <TextInput placeholder="Enter your email" placeholderTextColor="#AFAFAF" style={styles.textInput}/>
@@ -31,36 +27,16 @@ export default createAccount = ({ navigation }) => {
       <View style={styles.box}>
         <TextInput placeholder="Enter your email" placeholderTextColor="#AFAFAF" secureTextEntry={true} style={styles.textInput}/>
       </View>
-    <Text style={styles.title}>Confirm Password</Text>
-      <View style={styles.box}>
-        <TextInput placeholder="Enter your email" placeholderTextColor="#AFAFAF" secureTextEntry={true} style={styles.textInput}/>
-      </View>
-      <Text style={styles.smalltext}>
-      By creating an account, you accept our 
-      <Text style={{color: '#DD6E42', fontFamily: 'Poppins-Regular' }}>
-        {"\n"}{' '} Terms of Use 
-      </Text>
-        {' '} and
-      <Text style={{color: '#DD6E42', fontFamily: 'Poppins-Regular' }}>
-        {' '} Privacy Policy.
-      </Text>
-      </Text>
       <TouchableOpacity
         onPress={() => navigation.push('HomeScreen')}
         >
-        <View style={styles.box2}>
-            <Text style={styles.boxtext}>Create Account</Text>
-        </View>
+    <View style={styles.box2}>
+        <Text style={styles.boxtext}>Sign In</Text>
+      </View>
         </TouchableOpacity>
-
-        <TouchableOpacity
-        onPress={() => navigation.push('logIn')}
-        >
+        <TouchableOpacity>
       <Text style={styles.bottom}>
-        Don't have an account?
-      <Text style={{color: '#DD6E42', fontFamily: 'Poppins-Bold' }}>
-        {' '} Log in
-      </Text>
+        Forgot Password?
       </Text>
       </TouchableOpacity>
       <StatusBar style="auto" />
@@ -124,7 +100,7 @@ const styles = StyleSheet.create({
     alignSelf: 'center',
   },
   bottom: {
-    color: '#000000',
+    color: '#DD6E42',
     fontFamily: 'Poppins-Regular',
     fontSize: 16,
   },

@@ -1,10 +1,11 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import { StyleSheet, Text, View, Image } from 'react-native';
+import {useState} from "react";
+import { StyleSheet, Text, View, Image, TouchableOpacity, FlatList } from 'react-native';
 import { useFonts } from 'expo-font';
 import AppLoading from 'expo-app-loading';
 
-export default landingPage = () => {
+export default landingPage = ({ navigation }) => {
    const [fontsLoaded] = useFonts({
     'Avigea': require('../../assets/fonts/Avigea.ttf'),
     'Poppins-Bold': require('../../assets/fonts/Poppins-Bold.ttf'),
@@ -15,7 +16,7 @@ export default landingPage = () => {
   if(!fontsLoaded) {
     return <AppLoading/>;
   }
-    
+
   return (
     <View style={styles.container}>
       <Text style={styles.maintext}>All your banks,</Text>
@@ -24,15 +25,24 @@ export default landingPage = () => {
         source={require('../../assets/images/cardscoins.png')} 
         style={styles.image}
         />
+    <TouchableOpacity
+        onPress={() => navigation.push('createAccount')}
+      >
       <View style={styles.box}>
         <Text style={styles.boxtext}>Create Account</Text>
       </View>
+      </TouchableOpacity>
+      
+      <TouchableOpacity
+        onPress={() => navigation.push('logIn')}
+        >
       <Text style={styles.bottom}>
         Don't have an account?
       <Text style={{color: '#DD6E42', fontFamily: 'Poppins-Bold' }}>
         {' '} Log in
       </Text>
       </Text>
+      </TouchableOpacity>
       <StatusBar style="auto" />
     </View>
   );

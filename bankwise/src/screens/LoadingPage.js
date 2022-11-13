@@ -1,11 +1,11 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, TouchableWithoutFeedback, View } from 'react-native';
 import { useFonts } from 'expo-font';
 import AppLoading from 'expo-app-loading';
 
 
-export default loadingPage = () => {
+export default loadingPage = ({ navigation }) => {
    const [fontsLoaded] = useFonts({
     'Avigea': require('../../assets/fonts/Avigea.ttf'),
   });
@@ -13,12 +13,20 @@ export default loadingPage = () => {
   if(!fontsLoaded) {
     return <AppLoading/>;
   }
-    
+
+  const pressHandler = () => {
+    navigation.navigate('LandingPage');
+  }
+
   return (
+    <TouchableWithoutFeedback
+        onPress={pressHandler}
+    >
     <View style={styles.container}>
-      <Text style={styles.maintext}>bitwise</Text>
+      <Text style={styles.maintext}>bankwise</Text>
       <StatusBar style="auto" />
     </View>
+    </TouchableWithoutFeedback>
   );
 }
 
