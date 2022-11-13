@@ -7,12 +7,6 @@ import CreateAccount from "../src/screens/CreateAccount";
 import LogIn from "../src/screens/LogIn";
 
 const screens = {
-    HomeScreen: {
-        screen: HomeScreen,
-        navigationOptions: {
-            header: null,
-          }
-    },
     LoadingPage: {
         screen: LoadingPage,
         navigationOptions: {
@@ -36,8 +30,15 @@ const screens = {
         navigationOptions: {
             header: null,
           }
+    },
+    HomeScreen: {
+        screen: HomeScreen,
+        navigationOptions: {
+            header: null,
+          }
     }
 };
+
 const stack = createStackNavigator(screens);
 
 export default createAppContainer(stack);

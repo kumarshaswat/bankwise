@@ -1,7 +1,7 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
 import {useState} from "react";
-import { StyleSheet, Text, View, Image, TouchableOpacity, FlatList } from 'react-native';
+import { StyleSheet, Text, View, Image, TouchableOpacity } from 'react-native';
 import { useFonts } from 'expo-font';
 import AppLoading from 'expo-app-loading';
 
@@ -26,7 +26,7 @@ export default landingPage = ({ navigation }) => {
         style={styles.image}
         />
     <TouchableOpacity
-        onPress={() => navigation.push('createAccount')}
+        onPress={() => navigation.push('CreateAccount')}
       >
       <View style={styles.box}>
         <Text style={styles.boxtext}>Create Account</Text>
