@@ -26,7 +26,7 @@ export default landingPage = ({ navigation }) => {
         style={styles.image}
         />
     <TouchableOpacity
-        onPress={() => navigation.push('CreateAccount')}
+        onPress={() => navigation.push('createAccount')}
       >
       <View style={styles.box}>
         <Text style={styles.boxtext}>Create Account</Text>

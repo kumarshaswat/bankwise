@@ -3,7 +3,9 @@ import React from 'react';
 import { StyleSheet, Text, TouchableWithoutFeedback, View } from 'react-native';
 import { useFonts } from 'expo-font';
 import AppLoading from 'expo-app-loading';
-
+import { LogBox } from 'react-native';
+LogBox.ignoreLogs(['Warning: ...']); // Ignore log notification by message
+LogBox.ignoreAllLogs();//Ignore all log notifications
 
 export default loadingPage = ({ navigation }) => {
    const [fontsLoaded] = useFonts({
@@ -33,7 +35,7 @@ export default loadingPage = ({ navigation }) => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#EEEEEE',
+    backgroundColor: '#D5D7D2',
     alignItems: 'center',
     justifyContent: 'center',
   },
